@@ -31,7 +31,7 @@
 #import "ViewController.h"
 #import "SDCycleScrollView.h"
 #import "CustomCollectionViewCell.h"
-#import "UIImageView+WebCache.h"
+#import <UIImageView+YYWebImage.h>
 
 @interface ViewController () <SDCycleScrollViewDelegate>
 
@@ -230,7 +230,7 @@
 - (void)setupCustomCell:(UICollectionViewCell *)cell forIndex:(NSInteger)index cycleScrollView:(SDCycleScrollView *)view
 {
     CustomCollectionViewCell *myCell = (CustomCollectionViewCell *)cell;
-    [myCell.imageView sd_setImageWithURL:_imagesURLStrings[index]];
+    [myCell.imageView yy_setImageWithURL:_imagesURLStrings[index] options:YYWebImageOptionProgressiveBlur];
 }
 
 @end
